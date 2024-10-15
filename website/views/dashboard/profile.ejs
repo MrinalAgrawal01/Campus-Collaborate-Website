@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../header.ejs') %>
+  <link rel="stylesheet" href="../css file/profile.css" />
+
+  <body>
+    <%- include('../nav.ejs') %>
+    <div class="profilepagebasicinfo">
+      <div class="profileImage">
+        <img
+          src="<%= result.image %>"
+          onerror="setDefaultImage()"
+          class="profileimage"
+          alt="ProfileImage"
+        />
+      </div>
+      <div class="Info">
+        <div class="nameprofile"><%= result.name %></div>
+        <div class="RollNo"><%= result.rollno %></div>
+        <div class="major"><%= result.major %></div>
+        <div class="minor"><%= result.minor %></div>
+        <div class="outlook"><%= result.outlookid %></div>
+        <div class="phoneNo"><%= result.phoneno %></div>
+      </div>
+      <div class="editbasicinfo"><a href="" style="color: #4169fc" class="editimageicon"><i class="fa-solid fa-pen-to-square"></i></a></div>
+    </div>
+    
+    <!-- POR  -->
+
+    <div class="POR">
+      <div class="porheading">Position of Responsibility</div>
+      <% if (result.rollno == position.rollno) { %>
+        <% position.forEach(position => { %>
+          <a class="singlepor" href="/profile/<%= position._id %>" id="singlepor">
+            <div class="por-container">
+              <h2 class="clubporposition"><%= position.responsibility %></h2>
+              <div class="deletepor" style="color: #4169fc;"><i class="fa-solid fa-delete-left"></i></div>
+            </div>
+          </a>
+        <% }) %>
+      <% } else { %>
+        <p class="nillpor">No POR to show</p>
+      <% } %>
+
+      <form action="/profilepage" method="POST">
+        <label for="porinclubs"></label>
+        <input
+          type="text"
+          id="porinclubs"
+          class="porinclubs"
+          placeholder="Club- Position of Responsibility"
+        />
+        <label for="rollnoskill"></label>
+        <input
+          type="text"
+          id="rollnopor"
+          class="rollnopor"
+          value="<%= result.rollno %>"
+        />
+        <button style="background-color: white; border: 1px white solid;">
+          <div class="addbutton"><i class="fa-solid fa-plus"></i></div>
+        </button>
+      </form>
+    </div>
+
+    <!-- Skills  -->
+
+    <div class="skills">
+      <div class="skillheading">Skills</div>
+      <% if (result.rollno == skillset.rollno) { %>
+        <% skillset.forEach(skillset => { %>
+          <a class="singleskill" href="/profile/<%= skillset._id %>" id="singleskill">
+            <div class="skill-container">
+              <h2 class="skilladded"><%= skillset.myskill %></h2>
+              <div class="deleteskill" style="color: #4169fc;"><i class="fa-solid fa-delete-left"></i></div>
+            </div>
+          </a>
+        <% }) %>
+      <% } else { %>
+        <p class="nillskill">No Skill to show</p>
+      <% } %>
+
+      <form action="/profilepage" method="POST">
+        <label for="skillset"></label>
+        <select id="skillset" name="skillset" class="skillset">
+          <option value="Null" selected>Choose a skill</option>
+          <option value="Web Development">Web Development</option>
+          <option value="App Development">App Development</option>
+          <option value="Consulting">Consulting</option>
+          <option value="Machine Learning">Machine Learning</option>
+          <option value="Blockchain">Blockchain</option>
+          <option value="Product Management">Product Management</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+          <option value="UI/UX Design">UI/UX Design</option>
+        </select>
+        <label for="rollnoskill"></label>
+        <input
+          type="text"
+          id="rollnoskill"
+          class="rollnoskill"
+          value="<%= result.rollno %>"
+        />
+        <button style="background-color: white; border: 1px white solid;">
+          <div class="addbutton"><i class="fa-solid fa-plus"></i></div>
+        </button>
+      </form>
+    </div>
+
+    <!-- Project -->
+
+    <div class="Project content">
+      <h2 class="projectheading">My Projects</h2>
+      <% if (result.password == myproject.password) { %>
+        <% myproject.forEach(myproject => { %>
+          <a class="singleproject" href="/profile/<%= myproject._id %>" id="singleproject">
+            <div class="project-container">
+              <div><img src="./Images/iitgimage.jpg" class="projectdescriptionimage"></div>
+              <div class="projectdetailsinfo">
+                <div class="projecttitle" ><%= myproject.title %></div>
+                <div class="ideaoftheproject"><%= myproject.idea %></div>
+                <div class="ratings">Idea Reviews: <%= myproject.reviewidea %> <br>Execution Reviews: <%= myproject.reviewexecution %></div>
+              </div>
+              <div class="deleteproject" style="color: #4169fc;"><i class="fa-solid fa-trash"></i></div>
+            </div>
+          </a>
+        <% }) %>
+      <% } else { %>
+        <p class="nillproject">No Project to show</p>
+      <% } %>
+      <div class="addproject">
+        <a href="<%= 'createproject.ejs' %>">ADD PROJECT</a>
+      </div>
+    </div>
+    <%- include('../footer.ejs')%>
+
+    <script src="../profilepage.js"></script>
+  </body>
+</html>

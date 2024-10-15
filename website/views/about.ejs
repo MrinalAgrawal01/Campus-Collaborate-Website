@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./header.ejs") %>
+<style>
+.aboutheading {
+
+    padding: 0.7%;
+    display: flex;
+    justify-content: center;
+    color: #145a82;
+    font-weight: 700;
+}
+
+.black-line {
+    height: 2px;
+
+    width: 80%;
+
+    margin: 0 auto;
+
+    background-color: rgba(0, 128, 255, 0.5);
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    padding: 1% 10% 5% 15%;
+    font-size: 20px;
+}
+
+.next-line {
+    height: 1.5px;
+
+    width: 100%;
+
+    margin: 0 auto;
+
+    background-color: rgba(0, 128, 255, 0.5);
+}
+
+.MEET {
+    background-color: #fbfcfd;
+}
+
+.team {
+    color: #145a82;
+    font-weight: 700;
+    line-height: 42.5px;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    padding-left: 27%;
+}
+
+.image-container {
+    margin-right: 60px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover {
+    transform: translateY(-5px);
+
+}
+
+.rounded-image {
+
+    width: 190px;
+    height: 210px;
+    border-radius: 3%;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+.paragraph {
+    font-size: 14px;
+    color: #0d7eaf;
+   
+    margin-bottom: 0;
+
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+  }
+  
+  .logoimage {
+    width: 250px;
+    padding: 0% 20%;
+  }
+  
+  .login_register {
+    display: flex;
+    padding: 2.5% 6%;
+  }
+  .headerlink {
+    display: flex;
+    padding: 2.5% 2%;
+  }
+  #headerlinkname {
+    padding: 0% 18%;
+    font-size: 120%;
+  }
+  #boxheader {
+    padding: 0% 8%;
+    font-size: 120%;
+  }
+  .linkheader:hover {
+    color: #0037ff;
+  }
+  .linkheader {
+    text-decoration: none;
+    color: black;
+  }
+  #registrationhead {
+    background-color: #4f97ff;
+    color: white;
+    padding: 3px 35px;
+    border-radius: 9.6px;
+    font-size: 120%;
+  }
+  #registrationhead:hover {
+    background-color: #416afe;
+    transform: scale(1.2);
+  }
+</style>
+<body>
+    <div class="header">
+        <div class="icon"><img src="../public/Image/LogoName.png" class="logoimage"></div>
+        <div class="headerlink">
+            <div class="homeheader" id="headerlinkname"><a href="getstarted" class="linkheader">Home</a></div>
+            <div class="aboutusheader" id="headerlinkname"><a href="about" class="linkheader">About</a></div>
+            <div class="contactheader" id="headerlinkname"><a href="" class="linkheader">Contact</a></div>
+        </div>
+        <div class="login_register">
+            <div class="login_header" id="boxheader"><a href="" class="linkheader">Login</a></div>
+            <div class="register_header" id="boxheader"><a href="" class="linkheader" style="color: white;" id="registrationhead">Register</a></div>
+        </div>
+    </div>
+    <div>
+        <div class="aboutheading">
+            <h1>ABOUT US</h1>
+        </div>
+        <div class="black-line solid-glass-blue"></div>
+        <div class="text">
+            Our organization is a dynamic and innovative group of students dedicated to fostering collaboration and innovation on campus. 
+We strive to create a supportive and inclusive environment that encourages students to share their ideas and perspectives. 
+We also offer  reviews on workshops and training sessions on skills such as web development, app development , project management and many more. 
+We aim to provide a unique opportunity to develop your skills, network with like-minded individuals, and make a difference on campus.
+Join us today and be a part of the change!
+        </div>
+        <div class="next-line"></div>
+        <div class="team">
+            <h2>MEET THE TEAM</h2>
+        </div>
+        <div class="MEET">
+            <div class="image-row">
+                <div class="image-container">
+                    <img src="../public/Image/Shreeya.png" alt="Image 1" class="rounded-image">
+                    <div class="paragraph">
+                        <p>Shreeya Gupta</p>
+                        <p>+91 6267650792</p>
+                        <p>g.shreeya@iitg.ac.in</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../public/Image/prachi.jpg" alt="Image 2" class="rounded-image">
+                    <div class="paragraph">
+                        <p>Prachi Bindal</p>
+                        <p>+91 6267650792</p>
+                        <p>p.bindal@iitg.ac.in</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../public/Image/meghana.jpg" alt="Image 3" class="rounded-image">
+                    <div class="paragraph">
+                        <p>Meghana Nelapati</p>
+                        <p>+91 9390852387</p>
+                        <p>m.nelapati@iitg.ac.in</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="image-row">
+                <div class="image-container">
+                    <img src="../public/Image/Kanika.jpg" alt="Image 4" class="rounded-image">
+                    <div class="paragraph">
+                        <p>Kanika Singh</p>
+                        <p>+91 8887834276</p>
+                        <p>s.kanika@iitg.ac.in</p>
+
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../public/Image/priti.jpg" alt="Image 5" class="rounded-image">
+                    <div class="paragraph">
+                        <p>Priti Kumari</p>
+                        <p>+91 7667165523</p>
+                        <p>Priti Kumari</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="../public/Image/Mrinal.jpg" alt="Image 6" class="rounded-image">
+                    <div class="paragraph">
+                        <p>Mrinal Agrawal</p>
+                        <p>+91 9521372224</p>
+                        <p>a.mrinal@iitg.ac.in</p>
+                    </div>
+                </div>
+
+            </div>
+   </div>
+
+    </div>
+    <%- include("./footer.ejs") %>
+</body>
+
+</html>

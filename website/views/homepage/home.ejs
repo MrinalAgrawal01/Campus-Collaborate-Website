@@ -1,0 +1,87 @@
+<html lang="en">
+<%- include("../header.ejs") %>
+<link rel="stylesheet" href="../css file/home.css" />
+
+<body>
+  <%- include("../nav.ejs") %>
+
+  <div class="latest_projects">
+
+    <% if (myproject.length > 0) { %>
+      <% myproject.forEach(myproject => { %>
+        <a
+          class="singleproject"
+          href="/home/<%= myproject._id %>"
+          id="singleproject"
+        >
+          <div class="project-container">
+            <!-- <h2><%= myproject.title %></h2>
+                      to get the content;
+                      further write the way you want the data to display -->
+
+
+            <!-- code in order to review -->
+
+            <!-- collect the feedback -->
+            <div class="feedback">
+              <form action="/homepage" method="POST">
+                <label for="projectfeedback">Feedback</label>
+                <input
+                  type="text"
+                  id="projectfeedback"
+                  class="projectfeedback"
+                  placeholder="suggestions"
+                />
+                <label for="password">projectpassword</label>
+                <input
+                  type="text"
+                  id="password"
+                  class="password"
+                  value="<%= myproject.password %>"
+                />
+                <button>
+                  <div class="addbutton">Add FEEDBACK</div>
+                </button>
+              </form>
+            </div>
+
+            <!-- feedback view -->
+            <!-- top 5 feedback with dropdown drop down optional h  -->
+            <div class="feedback_top">
+
+              <% if (myproject.password == currentfeedback.password) { %>
+                <% currentfeedback.forEach(currentfeedback => { %>
+                  <a
+                    class="singlefeedback"
+                    href="/home/<%= currentfeedback._id %>"
+                    id="singlefeedback"
+                  >
+                    <div class="feedback-container">
+                      <h2><%= currentfeedback.feedback %></h2>
+                    </div>
+                  </a>
+                <% }) %>
+              <% } else { %>
+                <p>No feedback to show</p>
+              <% } %>
+
+            </div>
+            <!-- collaborate : link-->
+            <div class="collaborate">
+              <a href="<%= myproject.gitlink %>"><img src=""></a>
+            </div>
+
+
+          </div>
+        </a>
+      <% }) %>
+    <% } else { %>
+      <p>No Project to show</p>
+    <% } %>
+
+
+  </div>
+
+  <%- include("../footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Add_Project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css " />
+</head>
+
+<body>
+    <div class="background">
+        <div class="overlay">
+            <div class="overlay-image">
+                <img src="./Images/iitggate.png" alt="Image">
+            </div>
+
+            <div class="overlay-content">
+                <div class="heading">
+                    <h2>Add Project</h2>
+                </div>
+                <form>
+
+                    <div class="ProjectName">
+                        <label for="title">Project Title:</label>
+                    </div>
+                    <div class="ProjectNameBox">
+                        <input type="text" id="title" name="title" placeholder="Write your Project Name" required>
+                    </div>
+
+                    <div class="ProjectName">
+                        <label for="idea">Ideation:</label>
+                    </div>
+                    <div class="ProjectNameBox">
+                        <textarea type= "text" id="idea" name="idea" placeholder="Write your Ideation" required></textarea>
+                    </div>
+
+                    <div class="ProjectName">
+                        <label for="detailedidea">Description:</label>
+                    </div>
+                    <div class="ProjectNameBox">
+                        <textarea type= "text" id="detailedidea" name="detailedidea" placeholder="Write your Description" required></textarea>
+                    </div>
+                    <div class="ProjectName">
+                        <label for="skillset">Skills:</label>
+                    </div>
+                    <div class="ProjectNameBox">
+                        <select id="skillset" name="skillset" class="skillset">
+                            <option value="Null" selected>Choose a skill</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="App Development">App Development</option>
+                            <option value="Consulting">Consulting</option>
+                            <option value="Machine Learning">Machine Learning</option>
+                            <option value="Blockchain">Blockchain</option>
+                            <option value="Product Management">Product Management</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                        </select>
+                    </div>
+                    <!-- drivelink -->
+                    <div class="ProjectName">
+                        <label for="drivelink">Drive Link:</label>
+                    </div>
+                    <div class="ProjectNameBox">
+                        <input type="url" id="drivelink" name="drivelink" placeholder="Provide drive link (Optional)">
+                    </div>
+                    <!-- gitlink -->
+                    <div class="ProjectName">
+                        <label for="gitlink">Github link:</label>
+                    </div>
+                    <div class="ProjectNameBox">
+                        <input type="url" id="gitlink" name="gitlink" placeholder="Provide github link (Optional)">
+                    </div>
+                    <!-- Video -->
+                    <div class="ProjectName">
+                        <label for="video">Video(Optional):</label>
+                    </div>
+                    <div class="ProjectNameBox"><input type="url" accept="video/*" id="video" name="video"
+                            placeholder="Provide video link(Optional)"></div>
+                    <!-- Image -->
+                    <div class="ProjectName">
+                        <label for="image">Image(Optional):</label>
+                    </div>
+                    <div class="ProjectNameBox">
+                        <input type="file" id="image" name="image" placeholder="Link">
+                    </div>
+                    <!-- Password -->
+                    <div class="ProjectName">
+                        <label for="password">Password:</label>
+                    </div>
+                    <div style="display: flex;">
+                        <div class="ProjectNameBox"><input type="password" id="password" name="password">
+                        </div>
+
+                        <div style="display:flex; padding-left: 20%;">
+                        <button class="submitproject">Submit</button>
+                    </div>
+                    </div>
+                </form>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+
+
+</ht
